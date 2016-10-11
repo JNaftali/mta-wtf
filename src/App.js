@@ -20,7 +20,7 @@ class App extends Component {
     GoogleMapsLoader.KEY = 'AIzaSyAN1IggXefhhur_pk-zNq_s2U9_LEn0z30'
     GoogleMapsLoader.load((google)=> this.setState({google: google}))
 
-    fetch('http://wtf-mta.herokuapp.com/stations')
+    fetch('https://wtf-mta.herokuapp.com/stations')
     .then((response)=> response.json())
     .then((json)=> {
       let {lines, stations, lineStations} = json
@@ -60,7 +60,7 @@ class App extends Component {
   }
 
   refreshPage() {
-    fetch('http://wtf-mta.herokuapp.com/latest')
+    fetch('https://wtf-mta.herokuapp.com/latest')
     .then((response)=> response.json())
     .then((json)=> this.setState({liveStatus: json}))
   }
